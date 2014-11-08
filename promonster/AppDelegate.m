@@ -28,7 +28,6 @@ static NSString *const kAllowTracking = @"allowTracking";
 @implementation AppDelegate
 @synthesize tabBarController;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [FBLoginView class];
     [FBProfilePictureView class];
     [self definePushNotification: application];
@@ -62,27 +61,22 @@ static NSString *const kAllowTracking = @"allowTracking";
     return YES;
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application
-{
+- (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
+- (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (void)applicationWillEnterForeground:(UIApplication *)application {
     application.applicationIconBadgeNumber = 0;
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -201,6 +195,10 @@ static NSString *const kAllowTracking = @"allowTracking";
 
 
 #pragma mark - Rater
+/**
+ *  UAppReviewManager
+ *  Request Automatic Review for Apple Store
+ */
 - (void) defineAppReview {
     [UAAppReviewManager setAppID:@"919649318"];
     [UAAppReviewManager setAppName:@"Promonster"];
@@ -219,6 +217,10 @@ static NSString *const kAllowTracking = @"allowTracking";
 }
 
 #pragma mark - Google Analytics
+/**
+ *  Google Analytics
+ *  Analyzes user behavior within the application
+ */
 - (void) defineGoogleAnalytics {
     NSDictionary *appDefaults = @{kAllowTracking: @(YES)};
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
@@ -240,6 +242,9 @@ static NSString *const kAllowTracking = @"allowTracking";
 
 
 #pragma mark - Push Notification
+/**
+ *  Initializes and configures the push notification
+ */
 - (void) definePushNotification: (UIApplication *) application{
     /**** PUSH NOTIFY ****/
     if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
@@ -257,20 +262,9 @@ static NSString *const kAllowTracking = @"allowTracking";
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [CCAux setPushToken:[self stringWithDeviceToken:deviceToken]];
     if (kDEBUG) {
-        NSLog(@"\n>>>Token Device PushNotification: %@",[CCAux getPushToken]);
+        NSLog(@"\n> Token Device PushNotification: %@",[CCAux getPushToken]);
     }
 }
-
-- (NSString*)stringWithDeviceToken:(NSData*)deviceToken {
-    const char* data = [deviceToken bytes];
-    NSMutableString* token = [NSMutableString string];
-    
-    for (int i = 0; i < [deviceToken length]; i++) {
-        [token appendFormat:@"%02.2hhX", data[i]];
-    }
-    return [token copy];
-}
-
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     if (kDEBUG) {
         NSLog(@"\nERROR - push.");
@@ -282,6 +276,7 @@ static NSString *const kAllowTracking = @"allowTracking";
         }
     }
 }
+
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
@@ -306,11 +301,29 @@ static NSString *const kAllowTracking = @"allowTracking";
     }
 }
 
+/**
+ *  Defines the device token
+ *
+ *  @param deviceToken Device Token NSData
+ *
+ *  @return Device Token String
+ */
+- (NSString*)stringWithDeviceToken:(NSData*) deviceToken {
+    const char* data = [deviceToken bytes];
+    NSMutableString* token = [NSMutableString string];
+    
+    for (int i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+    return [token copy];
+}
+
 - (void) goPromonster {    
     [[NSUserDefaults standardUserDefaults] setValue:_userInfoTmp forKey:@"promoIdPush"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil userInfo:_userInfoTmp];
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     

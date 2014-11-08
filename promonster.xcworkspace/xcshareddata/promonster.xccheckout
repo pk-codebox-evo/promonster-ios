@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>70053090-2B48-4C2C-BAEF-C871A4BD1CF8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>promonster</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8ADDE22608AC70DABCFF61C7A9E0D9F11633A477</key>
+		<string>https://github.com/usemobile/promonster_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>promonster.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8ADDE22608AC70DABCFF61C7A9E0D9F11633A477</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/usemobile/promonster_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8ADDE22608AC70DABCFF61C7A9E0D9F11633A477</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8ADDE22608AC70DABCFF61C7A9E0D9F11633A477</string>
+			<key>IDESourceControlWCCName</key>
+			<string>promonster</string>
+		</dict>
+	</array>
+</dict>
+</plist>

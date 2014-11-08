@@ -60,7 +60,6 @@
 - (void) termsAction;
 - (void) talkAction;
 
-
 /**
  *
  *  CoreLocation

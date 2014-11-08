@@ -14,10 +14,11 @@
 @interface DefaultViewController : GAITrackedViewController <UITableViewDataSource, UITableViewDelegate> {
     BOOL m_postingInProgress;
 }
-- (void) titleCustom;
-- (void) backButtonCustom;
-- (NSString *) getEN_orderName: (NSString *) nameOrder;
-@property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
+
+- (NSString *) getEN_orderName: (NSString *) nameOrder;
+- (void) backButtonCustom;
+- (void) titleCustom;
 
 @end

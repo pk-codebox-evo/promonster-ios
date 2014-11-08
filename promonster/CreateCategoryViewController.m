@@ -94,9 +94,7 @@
                 text = [text stringByAppendingString:word];
             }
             self.outWordsTextField.text = text;
-
         }
-        
     } else {
         self.navigationItem.title = @"CRIAR CATEGORIA";
         [self.nameTextField becomeFirstResponder];
@@ -195,8 +193,7 @@ static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
 static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 400;
 static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
 	CGRect textFieldRect = [self.scrollView.window convertRect:textField.bounds fromView:textField];
 	CGRect viewRect = [self.scrollView.window convertRect:self.scrollView.bounds fromView:self.scrollView];
 	CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
@@ -265,25 +262,23 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         newCategory.stringIn = inWordsTextField.text;
         newCategory.stringOut = outWordsTextField.text;
         
-        service = [[WebService alloc] init];
+        if (!service) {
+            service = [[WebService alloc] init];
+        }
+        
         
         if (edit) {
             [service editCategoryPOST:newCategory andDelegate:self];
-            
         } else {
             if ([nameTextField.text isEqualToString:@""]) {
                 [CSNotificationView showInViewController:self
                                                    style:CSNotificationViewStyleError
                                                  message:@"Insira um nome para a categoria!"];
                 [nameTextField becomeFirstResponder];
-                
-                
             } else {
                 [service createCategory:newCategory andDelegate:self];
             }
         }
-    } else {
-        NSLog(@"JA ESTA SALVANDO!");
     }
 }
 - (void) setDelegate:(CategoriesViewController *)delegateTmp {

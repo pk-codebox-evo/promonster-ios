@@ -16,8 +16,7 @@
 
 @implementation DefaultViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -25,45 +24,43 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self settingsButton];
     
     // Add pull to refresh control.
     [self createRefreshControl];
     
-
     NSShadow *shadow = [NSShadow.alloc init];
     shadow.shadowColor = [UIColor redColor];
-    
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                      [UIColor blackColor],NSForegroundColorAttributeName,
                                                                      shadow, NSShadowAttributeName,
                                                                      [UIFont fontWithName:@"Rokkitt" size:20.0], NSFontAttributeName, nil]];
-   
 }
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self backButtonCustom];
-
 }
-- (void) titleCustom {
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"promonster_navbar"]];
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - WebService
 - (void) download {
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.refreshControl endRefreshing];
     });
 }
+
+#pragma mark - Layout
+- (void) titleCustom {
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"promonster_navbar"]];
+}
+
 - (void) settingsButton {
     UIImage *image = [[UIImage imageNamed:@"shared"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -250,9 +247,7 @@
                  }
              }
          }];
-    }
-    else
-    {
+    } else {
         // If permissions present and not already posting then publish the story
         if (!m_postingInProgress)
         {
@@ -317,7 +312,7 @@
     return cell;
 }
 
-#pragma mark - 
+#pragma mark - Refresh Control
 - (void) createRefreshControl {
     UITableViewController *tableViewController = [[UITableViewController alloc] init];
     tableViewController.tableView = self.tableView;

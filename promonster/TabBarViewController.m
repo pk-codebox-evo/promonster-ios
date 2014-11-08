@@ -16,8 +16,7 @@
 
 @implementation TabBarViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -57,7 +56,13 @@
     self.tabBar.translucent = NO;
 }
 
--(void) configTabBar {
+
+#pragma mark - Config TabBar
+/**
+ *  Customizes and configures the TabBarController
+ */
+
+- (void) configTabBar {
     UITabBar *tabBar = self.tabBar;
     
     for (UITabBarItem  *tab in tabBar.items) {

@@ -52,11 +52,6 @@
     site = [site stringByAppendingString:@"main?sort="];
     site = [site stringByAppendingString:order];
     
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
-    
-    
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
@@ -84,12 +79,9 @@
             [delegate.tableView reloadData];
             [delegate.refreshControl endRefreshing];
 
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [delegate.refreshControl endRefreshing];
         delegate.failLoad = YES;
         [self showErrorInView:delegate];
@@ -104,11 +96,6 @@
     site = [site stringByAppendingString:@"promoJson/"];
     site = [site stringByAppendingString:promo_id];
 
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
-    
-    
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
@@ -157,7 +144,6 @@
             element = @{@"name":@"SharedCell", @"height":kShared};
             [elements addObject:element];
             
-            
             delegate.contCons = contContras;
             delegate.contPros = contPros;
             delegate.itens = elements;
@@ -165,12 +151,9 @@
             delegate.tableView.hidden = NO;
             [delegate.refreshControl endRefreshing];
             
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [delegate.refreshControl endRefreshing];
         delegate.tableView.hidden = NO;
 
@@ -206,11 +189,7 @@
     site = [site stringByAppendingString:[self encodeURIComponent:name]];
     site = [site stringByAppendingString:@"&sort="];
     site = [site stringByAppendingString:order];
-    
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
-    
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -222,12 +201,9 @@
             delegate.info = [parse parseProductFromDic:infoArray];
             [delegate.tableView reloadData];
             [delegate.refreshControl endRefreshing];
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [delegate.refreshControl endRefreshing];
 
         [self showErrorInView:delegate];
@@ -256,11 +232,7 @@
         NSString *user_id = [CCAux getUserID];
         site = [site stringByAppendingString:user_id];
     }
-    
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
-    
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -287,34 +259,26 @@
                                                        style:CSNotificationViewStyleError
                                                      message:message];
                     delegate.navigationItem.title = @"BUSCAR";
-
                 }
-                
-
-                
             } else {
                 [CSNotificationView showInViewController:delegate
                                                     style:CSNotificationViewStyleError
                                                  message:message];
                 delegate.navigationItem.title = @"BUSCAR";
                 delegate.tableView.hidden = YES;
- 
             }
             [delegate.refreshControl endRefreshing];
         } else {
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [delegate.refreshControl endRefreshing];
         delegate.navigationItem.title = @"BUSCAR";
-
 
         [self showErrorInView:delegate];
     }];
     [manager.operationQueue addOperation:operation];
 }
-
 
 #pragma mark - Category
 - (void) getListCategorieWithDelegate: (CategoriesViewController *) delegate {
@@ -333,9 +297,7 @@
     }
     site = [site stringByAppendingString:@"device_id="];
     site = [site stringByAppendingString:[CCAux getDeviceID]];
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -348,15 +310,10 @@
             delegate.tableView.hidden = NO;
             [delegate.tableView reloadData];
             [delegate.refreshControl endRefreshing];
-
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [delegate.refreshControl endRefreshing];
-
         [self showErrorInView:delegate];
     }];
     [manager.operationQueue addOperation:operation];
@@ -377,9 +334,7 @@
     }
     site = [site stringByAppendingString:@"&sort="];
     site = [site stringByAppendingString:order];
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -398,12 +353,9 @@
             }
             [delegate.refreshControl endRefreshing];
 
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
         [delegate.refreshControl endRefreshing];
     }];
@@ -415,7 +367,6 @@
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Removendo"];
 
-    
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
     
@@ -425,12 +376,8 @@
         site = [site stringByAppendingString:[CCAux getUserID]];
         site = [site stringByAppendingString:@"&name="];
         site = [site stringByAppendingString:[self encodeURIComponent:name]];
-    } else {
-        NSLog(@"Error = usuario nao logado");
     }
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -454,15 +401,10 @@
                                                    style:CSNotificationViewStyleError
                                                  message:message];
             }
-
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
-       // [delegate.refreshControl endRefreshing];
     }];
     [manager.operationQueue addOperation:operation];
 }
@@ -493,16 +435,13 @@
                                            style:CSNotificationViewStyleError
                                          message:@"Usuário não logado!"];
     }
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *response = responseObject;
         if ([response count]!=0) {
-          //  NSLog(@". %@",responseObject);
             NSString *status = [responseObject objectForKey:@"status"];
             NSString *message = [responseObject objectForKey:@"message"];
             
@@ -514,24 +453,16 @@
                 [delegate retractKeyboard];
                 
                 [self performSelector:@selector(goHomeWithDelegate: ) withObject:delegate.navigationController afterDelay:0];
-
-                
-                
             } else {
                 [CSNotificationView showInViewController:delegate
                                                    style:CSNotificationViewStyleError
                                                  message:message];
             }
             delegate.isSalve = NO;
-
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         delegate.isSalve = NO;
-
         [self showErrorInView:delegate];
     }];
     [manager.operationQueue addOperation:operation];
@@ -541,7 +472,6 @@
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Baixando info"];
 
-    
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
     
@@ -551,11 +481,6 @@
         site = [site stringByAppendingString:[CCAux getUserID]];
         site = [site stringByAppendingString:@"&name="];
         site = [site stringByAppendingString:[self encodeURIComponent:category.name]];
-    } else {
-        NSLog(@"Error = usuario nao logado");
-    }
-    if (dBUG) {
-        NSLog(@"%@",site);
     }
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
@@ -563,8 +488,6 @@
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *response = responseObject;
         if ([response count]!=0) {
-            NSLog(@". %@",response);
-       
             [cell hideUtilityButtonsAnimated:YES];
             CreateCategories *cat = [[CreateCategories alloc] init];
             cat.color = [response objectForKey:@"color"];
@@ -573,12 +496,9 @@
             cat.wordsIn = [responseObject objectForKey:@"keywords_in"];
             
             [delegate openView:cat];
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
     }];
     [manager.operationQueue addOperation:operation];
@@ -595,15 +515,10 @@
     NSString *site = kLINK;
     if ([CCAux shouldSkipLogIn]) {
         site = [site stringByAppendingString:@"category/edit"];
-    } else {
-        NSLog(@"Error = usuario nao logado");
     }
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     manager = [AFHTTPRequestOperationManager manager];
-    
-    NSLog(@"\n\n\n\n- name: %@ \ncolor:%@ \niN:%@ \nout:%@ - userid %@",category.name,category.color, category.stringIn, category.stringOut,[CCAux getUserID]);
+
     NSDictionary *params = @{@"user_id": [CCAux getUserID],
                              @"name" : category.name,
                              @"color": category.color,
@@ -634,9 +549,7 @@
                                                                     style:CSNotificationViewStyleError
                                                                   message:@"Falha na comunicação"];
                                  [self doneDownload];
-                                 NSLog(@"Error: %@", error);
                                  delegate.isSalve = NO;
-
                              }];
 }
 #pragma mark - POST LOGOFF
@@ -646,12 +559,8 @@
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Saindo.."];
     
     NSString *site = kLINK;
-
     site = [site stringByAppendingString:@"turnOffPush"];
 
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
     manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *params = @{@"user_id": [CCAux getUserID],
@@ -679,7 +588,6 @@
                                            style:CSNotificationViewStyleError
                                          message:@"Falha na comunicação"];
         [self doneDownload];
-        NSLog(@"Error: %@", error);
     }];
 }
 - (void) pushOnService: (UserLogin *) user andDelegate: (SetViewController *) delegate {
@@ -707,7 +615,6 @@
         email = @"user@user.com";
     }
     
-    
     site = [site stringByAppendingString:@"login?source="];
     site = [site stringByAppendingString:user.source];
     site = [site stringByAppendingString:@"&username="];
@@ -728,15 +635,12 @@
     site = [site stringByAppendingString:user.accesTokenFB];
     
     NSString *pushToken = [CCAux getPushToken];
-    NSLog(@"PUSH TOKEN: %@",pushToken);
     
     if (![pushToken isEqualToString:@"null"]) {
         site = [site stringByAppendingString:@"&push_token="];
         site = [site stringByAppendingString:pushToken];
     }
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -760,16 +664,12 @@
                 [FBSession.activeSession closeAndClearTokenInformation];
             }
             
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
         [FBSession.activeSession closeAndClearTokenInformation];
-        
-        ///        [delegate.refreshControl endRefreshing];
+
         [self doneDownload];
     }];
     [manager.operationQueue addOperation:operation];
@@ -781,12 +681,9 @@
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Desabilitando..."];
     
     NSString *site = kLINK;
-    
     site = [site stringByAppendingString:@"turnOffPush"];
     
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *params = @{@"user_id": [CCAux getUserID],
@@ -814,7 +711,6 @@
                                            style:CSNotificationViewStyleError
                                          message:@"Falha na comunicação"];
         [self doneDownload];
-        NSLog(@"Error: %@", error);
     }];
 }
 
@@ -842,22 +738,15 @@
         site = [site stringByAppendingString:@"&promo_id="];
         site = [site stringByAppendingString:[NSString stringWithFormat:@"%@",promo_ID]];
 
-        if (dBUG) {
-            NSLog(@"%@",site);
-        }
-    
         NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
         [request setTimeoutInterval:kTIME];
         
         AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSArray *response = responseObject;
             if ([response count]!=0) {
-               // NSLog(@"%@",responseObject);
                 NSString *status = [responseObject objectForKey:@"status"];
                 NSString *message = [responseObject objectForKey:@"message"];
                 if ([status isEqual:@"OK"]) {
-
-                    
                     [CSNotificationView showInViewController:delegate
                                                        style:CSNotificationViewStyleSuccess
                                                      message:message];
@@ -891,28 +780,21 @@
                         
                     }
                 }
-            } else {
-                // vazio
             }
             [self doneDownload];
             button.enabled = YES;
             [indicator stopAnimating];
             
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", operation.responseString);
             [self showErrorInView:delegate];
             button.enabled = YES;
             [indicator stopAnimating];
             [CSNotificationView showInViewController:delegate
                                                style:CSNotificationViewStyleError
                                              message:@"Falha na comunicação"];
-            
-            
         }];
         [manager.operationQueue addOperation:operation];
     } else {
-        NSLog(@"Error = usuario nao logado");
         button.enabled = YES;
         [indicator stopAnimating];
         [self doneDownload];
@@ -932,22 +814,15 @@
     [cell.likeButton addSubview:indicator];
     [indicator startAnimating];
     
-    
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
     
     NSString *site = kLINK;
     if ([CCAux shouldSkipLogIn]) {
-      //  NSLog(@"Esta logado - favorite");
         site = [site stringByAppendingString:@"favorite/delete?user_id="];
         site = [site stringByAppendingString:[CCAux getUserID]];
         site = [site stringByAppendingString:@"&promo_id="];
         site = [site stringByAppendingString:[NSString stringWithFormat:@"%@",promo_ID]];
-       // NSLog(@"promo id: %@",promo_ID);
-        
-        if (dBUG) {
-            NSLog(@"%@",site);
-        }
         
         NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
         [request setTimeoutInterval:kTIME];
@@ -955,12 +830,9 @@
         AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSArray *response = responseObject;
             if ([response count]!=0) {
-              ///  NSLog(@"... ?? ?%@",responseObject);
                 NSString *status = [responseObject objectForKey:@"status"];
                 NSString *message = [responseObject objectForKey:@"message"];
                 if ([status isEqual:@"OK"]) {
-                    
-                    
                     [CSNotificationView showInViewController:delegate
                                                        style:CSNotificationViewStyleSuccess
                                                      message:message];
@@ -969,35 +841,21 @@
 
                     [delegate.info removeObjectAtIndex:cellIndexPath.row];
                     [delegate.tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-
                 }
-                
-                
-                // delegate.info = [parse parseProductFromDic: infoArray];
-                //[delegate.tableView reloadData];
-                //[delegate.refreshControl endRefreshing];
-            } else {
-                // vazio
             }
             [self doneDownload];
             cell.likeButton.enabled = YES;
             [indicator stopAnimating];
-            
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", operation.responseString);
             [self showErrorInView:delegate];
             cell.likeButton.enabled = YES;
             [indicator stopAnimating];
             [CSNotificationView showInViewController:delegate
                                                style:CSNotificationViewStyleError
                                              message:@"Falha na comunicação"];
-            
-            
         }];
         [manager.operationQueue addOperation:operation];
     } else {
-        NSLog(@"Error = usuario nao logado");
         cell.likeButton.enabled = YES;
         [indicator stopAnimating];
         [self doneDownload];
@@ -1016,9 +874,7 @@
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:0.6];
             likeButton.alpha = 1;
-            
             [UIView commitAnimations];
-        
         }
     }];
     
@@ -1076,15 +932,12 @@
     site = [site stringByAppendingString:user.accesTokenFB];
 
     NSString *pushToken = [CCAux getPushToken];
-   // NSLog(@"PUSH TOKEN: %@",pushToken);
 
     if (![pushToken isEqualToString:@"null"]) {
         site = [site stringByAppendingString:@"&push_token="];
         site = [site stringByAppendingString:pushToken];
     }
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
+
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -1097,9 +950,7 @@
             [CCAux setUserID:user_id];
 
             if ([status isEqual:@"OK"]) {
-                
-                
-                
+
                 [CSNotificationView showInViewController:delegate
                                                    style:CSNotificationViewStyleSuccess
                                                  message:message];
@@ -1113,19 +964,12 @@
                                                    style:CSNotificationViewStyleError
                                                  message:message];
                 [FBSession.activeSession closeAndClearTokenInformation];
-
             }
-            
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
         [FBSession.activeSession closeAndClearTokenInformation];
-
-///        [delegate.refreshControl endRefreshing];
         [self doneDownload];
     }];
     [manager.operationQueue addOperation:operation];
@@ -1146,19 +990,13 @@
         site = [site stringByAppendingString:[CCAux getUserID]];
         site = [site stringByAppendingString:@"&"];
 
-    } else {
-        NSLog(@"Error = usuario nao logado");
     }
     site = [site stringByAppendingString:@"promo_id="];
     site = [site stringByAppendingString:promo_id];
     
     site = [site stringByAppendingString:@"&device_id="];
     site = [site stringByAppendingString:[CCAux getDeviceID]];
-    
-    if (dBUG) {
-        NSLog(@"%@",site);
-    }
-    
+  
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:site relativeToURL:manager.baseURL] absoluteString] parameters:nil error:&error];
     [request setTimeoutInterval:kTIME];
     
@@ -1170,9 +1008,6 @@
             NSString *message = [responseObject objectForKey:@"message"];
             
             if ([status isEqual:@"OK"]) {
-     
-                
-                
                 [CSNotificationView showInViewController:delegate
                                                    style:CSNotificationViewStyleSuccess
                                                  message:message];
@@ -1181,17 +1016,11 @@
                                                    style:CSNotificationViewStyleError
                                                  message:message];
             }
-            
-        } else {
-            // vazio
         }
         [self doneDownload];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", operation.responseString);
         [self showErrorInView:delegate];
         [self doneDownload];
-
-
     }];
     [manager.operationQueue addOperation:operation];
 }
@@ -1199,22 +1028,16 @@
 #pragma mark - Layout
 - (void) startDownloadInView: (UIView *) view {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-   // [DejalBezelActivityView activityViewForView:view withLabel:@"Atualizando"];
-    //[ProgressHUD show:@"Atualizando.." Interaction:YES];
-
 }
 
-- (NSString *)encodeURIComponent:(NSString *)string
-{
+- (NSString *)encodeURIComponent:(NSString *)string {
     NSString *s = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     s = [s stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-
     return s;
 }
 - (void) doneDownload {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [DejalBezelActivityView removeViewAnimated:YES];
-    //[ProgressHUD dismiss];
 }
 - (void) showErrorInView: (UIViewController *) view {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

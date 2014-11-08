@@ -24,8 +24,8 @@
 
 @implementation SetViewController
 @synthesize scrollView, userLogin, notifyAction, service;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -33,8 +33,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     if (!service) {
         service = [[WebService alloc] init];
@@ -63,13 +62,9 @@
         enableFB = YES;
     } else {
         enableFB = NO;
-
-        // NSLog(@"A");
         //SCSettings *settings = [SCSettings defaultSettings];
         if (_viewDidAppear) {
             _viewIsVisible = YES;
-            
-            // reset
         } else {
             [FBSession openActiveSessionWithAllowLoginUI:NO];
             FBSession *session = [FBSession activeSession];
@@ -115,6 +110,8 @@
     [self.notifyAction setOn:![CCAux getNotifyEnable]];
 }
 
+
+#pragma mark - Layout
 - (void) defineLayout {
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(retractKeyboard)];
     [scrollView addGestureRecognizer:gestureRecognizer];
@@ -125,7 +122,6 @@
     
     if (isiPhone5) {
         scrollViewContentSize = CGSizeMake(320, 590);
-
     } else {
         scrollViewContentSize = CGSizeMake(320, 680);
     }
@@ -133,7 +129,6 @@
     
     [_blackListButton addTarget:self action:@selector(blackListAction) forControlEvents:UIControlEventTouchUpInside];
     _blackListButton.layer.cornerRadius = CGRectGetHeight(_blackListButton.bounds) / 14;
-    
     
     [self setBorderInView:_bgrView];
     
@@ -156,18 +151,13 @@
     [self setBorderInButton:_talkButton];
     [_talkButton setBackgroundImage:[self imageWithColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
 }
-
-- (IBAction)flip:(UISwitch *)sender {
-    if (sender.on) {
-        if (!userLogin.email) {
-            [self alertEmail];
-        } else {
-            [service pushOnService:userLogin andDelegate:self];
-        }
-    }
-    else {
-        [service pushOffService:self];
-    }
+- (void) setBorderInButton: (UIButton *) buttonTmp {
+    buttonTmp.layer.borderWidth = 0.6f;
+    buttonTmp.layer.borderColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f].CGColor;
+}
+- (void) setBorderInView : (UIView *) viewTmp {
+    viewTmp.layer.borderWidth = 0.6f;
+    viewTmp.layer.borderColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f].CGColor;
 }
 - (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
@@ -182,14 +172,21 @@
     
     return image;
 }
-- (void) setBorderInButton: (UIButton *) buttonTmp {
-    buttonTmp.layer.borderWidth = 0.6f;
-    buttonTmp.layer.borderColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f].CGColor;
+
+#pragma mark - Button Action
+- (IBAction)flip:(UISwitch *)sender {
+    if (sender.on) {
+        if (!userLogin.email) {
+            [self alertEmail];
+        } else {
+            [service pushOnService:userLogin andDelegate:self];
+        }
+    }
+    else {
+        [service pushOffService:self];
+    }
 }
-- (void) setBorderInView : (UIView *) viewTmp {
-    viewTmp.layer.borderWidth = 0.6f;
-    viewTmp.layer.borderColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f].CGColor;
-}
+
 #pragma mark - Facebook
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
 }
@@ -202,15 +199,6 @@
              ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
                  if (!error) {
                      NSString *accesTokenFB = [FBSession activeSession].accessTokenData.accessToken;
-                     
-                     
-                     
-                     if ([FBSession.activeSession.permissions indexOfObject:@"email"] == NSNotFound) {
-                         //  NSLog(@"sem permissao email");
-                     } else {
-                         //NSLog(@"COM permissao email");
-                     }
-                     
             
                      NSString *gender = [user objectForKey:@"gender"];
                      gender = [gender substringToIndex:1];
@@ -298,8 +286,6 @@
     if (alertView.tag == 101) {
         if([title isEqualToString:@"Enviar"]) {
             NSString *emailTemp = [[alertView textFieldAtIndex:0]text];
-            NSLog(@"%@",emailTemp);
-
             userLogin.email = emailTemp;
             [service makeLogin:userLogin andDelegate:self];
         } else {

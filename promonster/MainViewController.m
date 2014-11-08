@@ -17,7 +17,6 @@
 #import "MainViewController.h"
 #import "HomeCell.h"
 
-#define dBUG NO
 #define IS_IOS7 [[UIDevice currentDevice].systemVersion hasPrefix:@"7"]
 
 @interface MainViewController ()
@@ -34,31 +33,58 @@
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+#pragma mark - View lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived) name:@"pushNotification" object:nil];
     
     [self setLayout];
-    if (dBUG) {
-        NSLog(@">> DEVICE ID: %@",[CCAux getDeviceID]);
-    }
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"Atualizando"];
 
     [self download];
     loadAgain = YES;
 }
--(void)pushNotificationReceived {
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (failLoad) {
+        [self download];
+        failLoad = NO;
+    }
+    self.screenName = @"Main Screen";
+}
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (start) {
+        //self.title = name;
+    } else {
+        
+    }
+}
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (disapearWithNavigation) {
+        loadAgain = NO;
+        disapearWithNavigation = NO;
+    } else {
+        loadAgain = YES;
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - PushNotification
+- (void)pushNotificationReceived {
     NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] valueForKey:@"promoIdPush"];
     NSString *promoId = [userInfo valueForKey:@"promo_id"];
     
-    if (dBUG) {
-        NSLog(@">>>promoId.. %@",promoId);
-    }
-
     NSUInteger tabSelected = self.tabBarController.selectedIndex;
     
     if (promoId) {
@@ -93,17 +119,6 @@
         [tab setBadgeValue: badge];
     }
 }
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];    
-}
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (failLoad) {
-        [self download];
-        failLoad = NO;
-    }
-    self.screenName = @"Main Screen";
-}
 
 - (void) setLayout {
     [_option setText:@"Ordenar por: Recomendadas"];
@@ -112,6 +127,7 @@
                  forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark - WebService
 - (void) download {
     NSString *order = _option.text;
     service = [[WebService alloc] init];
@@ -127,29 +143,6 @@
         [service getProductsByOrder:[self getEN_orderName:order]
                        withDelegate:self];
     }
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (start) {
-        //self.title = name;
-    } else {
-
-    }
-}
-- (void) viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    if (disapearWithNavigation) {
-        loadAgain = NO;
-        disapearWithNavigation = NO;
-    } else {
-        loadAgain = YES;
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - TableView DataSource

@@ -63,12 +63,9 @@
 }
 
 #pragma mark - View lifecycle
-
 - (void)loadView {
-    NSLog(@"loadView");
     self.view = self.webView;
     [self loadURL:self.URL];
-
 }
 
 - (void)viewDidLoad {

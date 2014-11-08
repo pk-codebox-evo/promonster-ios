@@ -124,7 +124,6 @@
     if ([segue.identifier isEqualToString:@"AppSegue"]) {
         DetailProductViewController *detailProduct = segue.destinationViewController;
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        //NSLog(@"... %@",[events objectAtIndex:path.row ]);
         Product *produto = [info objectAtIndex:path.row];
         detailProduct.promo_id = [NSString stringWithFormat:@"%@",produto.promo_id];
     }

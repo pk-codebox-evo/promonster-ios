@@ -23,8 +23,8 @@
 
 @implementation CategoriesViewController
 @synthesize info, tableView, createCategoryOutlet, update;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -66,52 +66,41 @@
     self.screenName = @"Categories Screen";
 
 }
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (disapearWithNavigation) {
+        loadAgain = NO;
+        disapearWithNavigation = NO;
+    } else {
+        loadAgain = YES;
+    }
+}
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - WebService
 - (void) download {
     WebService *service = [[WebService alloc] init];
     [service getListCategorieWithDelegate:self];
 
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 #pragma mark - TableView DataSource
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [info count];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //if (linha%2==0) {
-   /* static NSString *CellIdentifier = @"HomeCell";
-    HomeCell *cell = (HomeCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomeCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    Product *product = [info objectAtIndex:linha];
-    cell.name.text = product.name;
-    cell.price.text = [NSString stringWithFormat:@"R$ %@",product.price];
-    cell.date.text = product.date;
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:92/255.0f green:202/255.0f blue:222/255.0f alpha:1.0f];
-    [cell setSelectedBackgroundView:bgColorView];
-    
-    return cell;*/
-    /* } else {*/
     static NSString *CellIdentifier = @"CategorieCell";
     CategorieCell *cell = (CategorieCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategorieCell"
                                                      owner:self
                                                    options:nil];
         cell = [nib objectAtIndex:0];
-        //cell.imageTag.image = [UIImage imageNamed:@"tag1"];
     }
     
     Categories  *cat = [info objectAtIndex:indexPath.row];
@@ -128,14 +117,10 @@
     return cell;
     
 }
-/*
-- (UIColor *)colorFromHexString:(NSString *)hexString {
-    unsigned rgbValue = 0;
-    NSScanner *scanner = [NSScanner scannerWithString:hexString];
-    [scanner setScanLocation:1]; // bypass '#' character
-    [scanner scanHexInt:&rgbValue];
-    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
-}*/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;  {
+    return 54;
+}
+
 #pragma mark - TableView Delegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    // [self performSegueWithIdentifier:@"AppSegue" sender:self];
@@ -152,34 +137,6 @@
     disapearWithNavigation = YES;
     [self.navigationController pushViewController:detailProduct animated:YES];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-}
-- (void) viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    if (disapearWithNavigation) {
-        loadAgain = NO;
-        disapearWithNavigation = NO;
-    } else {
-        loadAgain = YES;
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AppSegue"]) {
-        //NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        //NSLog(@"... %@",[events objectAtIndex:path.row ]);
-        
-        //detailProduct.produto = [info objectAtIndex:path.row];
-        //        detailController.event = event;
-    }
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    //if (indexPath.row%2==0) {
-    return 54;
-    /*    }
-     else {
-     return 40;
-     }*/
 }
 
 #pragma mark - SWTableViewCell
@@ -234,6 +191,7 @@
             break;
     }
 }
+
 - (void) openView: (CreateCategories *) cat {
     CreateCategoryViewController *viewCategorie = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateCategoryViewController"];
     viewCategorie.edit = YES;
@@ -260,7 +218,6 @@
         default:
             break;
     }
-    
     return YES;
 }
 
@@ -270,6 +227,13 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AppSegue"]) {
+    }
+}
+
+#pragma mark - Button Action
 - (IBAction)createCategory:(UIButton *)sender {
     if ([CCAux shouldSkipLogIn]) {
         CreateCategoryViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateCategoryViewController"];
@@ -277,7 +241,6 @@
         [self.navigationController pushViewController:newView animated:YES];
     } else {
         [self performSelector:@selector(logIn) withObject:nil afterDelay:0.3];
-        
     }
 }
 - (void) logIn {
