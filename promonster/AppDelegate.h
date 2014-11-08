@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, UITabBarDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(nonatomic,strong) UITabBarController *tabBarController;
+@property (nonatomic, retain) NSString *promoID;
+@property (nonatomic, retain) NSDictionary *userInfoTmp;
+@property(nonatomic, strong) id<GAITracker> tracker;
 
 @end

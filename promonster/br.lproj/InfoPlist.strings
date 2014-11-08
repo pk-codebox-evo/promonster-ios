@@ -1,0 +1,8 @@
+/* Localized versions of Info.plist keys */
+
+"FBLV:LogOutButton" = "AALog Out";
+"FBLV:LogInButton" = "AALog In";
+"FBLV:LoggedInAs" = "AALogged in as: %@";
+"FBLV:LoggedInUsingFacebook" = "AAALogged in using Facebook";
+"FBLV:LogOutAction" = "AALog Out";
+"FBLV:CancelAction" = "AACancel";

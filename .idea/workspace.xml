@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d33dde94-7569-456e-ab4e-08ffc0a35ead" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Images.xcassets/AppIcon.appiconset/AppIcon29x29@2x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Images.xcassets/AppIcon.appiconset/AppIcon40x40@2x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/CSNotificationView_checkmarkIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/CSNotificationView_checkmarkIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/CSNotificationView_checkmarkIcon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/CSNotificationView_checkmarkIcon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/CSNotificationView_exclamationMarkIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/CSNotificationView_exclamationMarkIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/CSNotificationView_exclamationMarkIcon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/CSNotificationView_exclamationMarkIcon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Rokkitt.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/back@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/email-white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.bundle/error-color.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.bundle/error-color@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/facebook-white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/google-plus-white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/hearth-white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/hearth_selected@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/hearth_unselected@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/libTestFlight.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/linae@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/lock@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/paper_plane@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/promonster_navbar@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/promonster_navbar_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/shared@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.bundle/success-color.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.bundle/success-color@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_categories@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_heart@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_promonster@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_promonster_gray@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_search@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tab_user@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/tag@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/twitter-white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CCAux.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CCAux.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CCLabel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CCLabel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CategorieCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CategorieCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CategorieCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Categories.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Categories.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CategoriesViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CategoriesViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/RefreshTableHeaderView/CircleView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/RefreshTableHeaderView/CircleView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_checkmarkIcon.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/CSNotificationView/CSNotificationView.xcassets/CSNotificationView_exclamationMarkIcon.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCategories.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCategories.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCategoryViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCategoryViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/CreateCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DefaultViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DefaultViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DejalActivityView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DejalActivityView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DetailProductViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DetailProductViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DownloadImage.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/DownloadImage.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/RefreshTableHeaderView/EGORefreshTableHeaderView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/RefreshTableHeaderView/EGORefreshTableHeaderView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/GHContextMenuView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/GHContextMenuView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/HomeCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/HomeCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/HomeCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/MainViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDate+TimeAgo.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDate+TimeAgo.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/cs.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/da.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/de.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/en.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/es.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/fi.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/fr.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/hu.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/it.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/ja.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/lv.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/nb.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/nl.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/pt_BR.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/ro.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/ru.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/vi.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/zh_Hans.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NSDate-TimeAgo/NSDateTimeAgo.bundle/zh_Hant.lproj/NSDateTimeAgo.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NavigationViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/NavigationViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Parse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Parse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Product.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Product.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/ProgressHUD/ProgressHUD.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationGroup.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationGroup.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationItem.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationItem.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationSequence.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBAnimationSequence.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBRefreshControl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBRefreshControl.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBSimpleSyncRefreshControl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/QBSimpleSyncRefreshControl.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Settings.bundle/Root.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Settings.bundle/en.lproj/Root.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SCErrorHandler.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SCErrorHandler.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SCSettings.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SCSettings.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SearchViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SearchViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SettingsCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SettingsCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SettingsCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SettingsViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/SettingsViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Shared.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/Shared.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/StaredViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/StaredViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/TabBarViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/TabBarViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/TestFlight+AsyncLogging.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/TestFlight+ManualSessions.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/TestFlight.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/UIColor+HexString.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/UIColor+HexString.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/UserLogin.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/UserLogin.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/WebService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promonster/WebService.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/promonster.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/xcode.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/promonster/ViewController.m" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/promonster/ViewController.h" afterPath="$PROJECT_DIR$/promonster/MainViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/AppDelegate.h" afterPath="$PROJECT_DIR$/promonster/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/AppDelegate.m" afterPath="$PROJECT_DIR$/promonster/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/promonster/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="$PROJECT_DIR$/promonster/Images.xcassets/LaunchImage.launchimage/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/Base.lproj/Main_iPhone.storyboard" afterPath="$PROJECT_DIR$/promonster/Base.lproj/Main_iPhone.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/promonster.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promonster/promonster-Info.plist" afterPath="$PROJECT_DIR$/promonster/promonster-Info.plist" />
+    </list>
+    <ignored path="promonster.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_Retina__4_inch__7.1_i386_1" />
+  <component name="FavoritesManager">
+    <favorites_list name="promonster" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Main_iPad.storyboard" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/promonster/Base.lproj/Main_iPad.storyboard">
+          <provider selected="true" editor-type-id="appcode-designer">
+            <state ui-designer-zoom="1.0" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main_iPhone.storyboard" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/promonster/Base.lproj/Main_iPhone.storyboard">
+          <provider selected="true" editor-type-id="appcode-designer">
+            <state ui-designer-zoom="1.0" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/promonster/SearchViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43342036" vertical-offset="640" max-vertical-offset="2548">
+              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+              <folding>
+                <element signature="e#149#181#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/promonster/SearchViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+              <folding>
+                <element signature="e#149#182#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="y" value="22" />
+    <option name="width" value="1260" />
+    <option name="height" value="720" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Products" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promonster" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frameworks" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="recentsLimit" value="5" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="262" />
+  </component>
+  <component name="RunManager" selected="Application.promonster">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="promonster" TARGET_NAME="promonster" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="promonster" RUN_TARGET_NAME="promonster" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="promonster" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="promonster" TARGET_NAME="promonster" CONFIG_NAME="Debug" SCHEME_NAME="promonster" RUN_TARGET_PROJECT_NAME="promonster" RUN_TARGET_NAME="promonster" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <RunnerSettings RunnerId="AppRunner" />
+      <ConfigurationWrapper RunnerId="AppRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-AFNetworking" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-AFNetworking" CONFIG_NAME="Debug" SCHEME_NAME="Pods-AFNetworking" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-DCKeyValueObjectMapping" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-DCKeyValueObjectMapping" CONFIG_NAME="Debug" SCHEME_NAME="Pods-DCKeyValueObjectMapping" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-SWTableViewCell" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-SWTableViewCell" CONFIG_NAME="Debug" SCHEME_NAME="Pods-SWTableViewCell" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-UAAppReviewManager" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-UAAppReviewManager" CONFIG_NAME="Debug" SCHEME_NAME="Pods-UAAppReviewManager" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods" CONFIG_NAME="Debug" SCHEME_NAME="Pods" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="UAAppReviewManager-iOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="UAAppReviewManager-iOS" CONFIG_NAME="Debug" SCHEME_NAME="UAAppReviewManager-iOS" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.promonster" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pods-AFNetworking" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-DCKeyValueObjectMapping" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-SWTableViewCell" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Pods-UAAppReviewManager" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Pods" />
+      <item index="6" class="java.lang.String" itemvalue="Application.UAAppReviewManager-iOS" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d33dde94-7569-456e-ab4e-08ffc0a35ead" name="Default" comment="" />
+      <created>1407966045035</created>
+      <option name="number" value="Default" />
+      <updated>1407966045035</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="10" y="22" width="1260" height="720" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22460318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/promonster/Base.lproj/Main_iPad.storyboard">
+      <provider selected="true" editor-type-id="appcode-designer">
+        <state ui-designer-zoom="1.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/promonster/Base.lproj/Main_iPhone.storyboard">
+      <provider selected="true" editor-type-id="appcode-designer">
+        <state ui-designer-zoom="1.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/promonster/SearchViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#149#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/promonster/SearchViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43342036" vertical-offset="640" max-vertical-offset="2548">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <folding>
+            <element signature="e#149#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
