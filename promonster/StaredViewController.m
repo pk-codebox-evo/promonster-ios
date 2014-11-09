@@ -59,9 +59,10 @@
 #pragma mark - WebService
 - (void) download {
     WebService *service = [[WebService alloc] init];
+    service.delegate = self;
     
     if ([CCAux shouldSkipLogIn]) {
-        [service getListFavoritesOrder:[self getEN_orderName:_optionLabel.text] andDelegate:self];
+        [service getListFavoritesOrder:[self getEN_orderName:_optionLabel.text]];
     } else {
         self.info = nil;
         [self.tableView reloadData];

@@ -60,12 +60,13 @@
 - (void) download {
     if (!service) {
         service = [[WebService alloc] init];
+        service.delegate = self;
     }
     if (_showAct) {
         [DejalBezelActivityView activityViewForView:self.view withLabel:@"Baixando info.."];
         _showAct = NO;
     }
-    [service getProductDetailWithPromo_ID:promo_id withDelegate:self];
+    [service getProductDetailWithPromo_ID:promo_id];
 }
 
 #pragma mark - TableView DataSource

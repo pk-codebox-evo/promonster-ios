@@ -37,6 +37,7 @@
     [super viewDidLoad];
     if (!service) {
         service = [[WebService alloc] init];
+        service.delegate = self;
     }
     if (!userLogin) {
         userLogin = [[UserLogin alloc] init];
@@ -179,11 +180,11 @@
         if (!userLogin.email) {
             [self alertEmail];
         } else {
-            [service pushOnService:userLogin andDelegate:self];
+            [service pushOnService:userLogin];
         }
     }
     else {
-        [service pushOffService:self];
+        [service pushOffService];
     }
 }
 
@@ -251,7 +252,7 @@
     if (!userLogin.email) {
         [self alertEmail];
     } else {
-        [service makeLogin:userLogin andDelegate:self];
+        [service makeLogin:userLogin];
     }
 
 }
@@ -274,20 +275,19 @@
     [CCAux setShouldSkipLogIn:NO];
     if (enableFB) {
         enableFB = YES;
-        [service makeLogOff:self];
+        [service makeLogOff];
         enableFB = NO;
     }
 }
 
 #pragma mark - Alertview Delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     if (alertView.tag == 101) {
         if([title isEqualToString:@"Enviar"]) {
             NSString *emailTemp = [[alertView textFieldAtIndex:0]text];
             userLogin.email = emailTemp;
-            [service makeLogin:userLogin andDelegate:self];
+            [service makeLogin:userLogin];
         } else {
             [CSNotificationView showInViewController:self
                                                style:CSNotificationViewStyleError

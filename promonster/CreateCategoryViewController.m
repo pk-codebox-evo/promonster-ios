@@ -229,10 +229,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         
         if (!service) {
             service = [[WebService alloc] init];
+            service.delegate = self;
         }
         
         if (edit) {
-            [service editCategoryPOST:newCategory andDelegate:self];
+            [service editCategoryPOST:newCategory];
         } else {
             if ([nameTextField.text isEqualToString:@""]) {
                 [CSNotificationView showInViewController:self
@@ -240,7 +241,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
                                                  message:@"Insira um nome para a categoria!"];
                 [nameTextField becomeFirstResponder];
             } else {
-                [service createCategory:newCategory andDelegate:self];
+                [service createCategory:newCategory];
             }
         }
     }

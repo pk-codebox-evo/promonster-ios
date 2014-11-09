@@ -129,18 +129,18 @@
 #pragma mark - WebService
 - (void) download {
     NSString *order = _option.text;
-    service = [[WebService alloc] init];
+    if (!service) {
+        service = [[WebService alloc] init];
+        service.delegate = self;
+    }
+        
     if (start) {
         self.title = name;
-
         [service getProductsByName:name
-                          andOrder:[self getEN_orderName:order]
-                      withDelegate:self];
+                          andOrder:[self getEN_orderName:order]];
     } else {
         [self titleCustom];
-
-        [service getProductsByOrder:[self getEN_orderName:order]
-                       withDelegate:self];
+        [service getProductsByOrder:[self getEN_orderName:order]];
     }
 }
 

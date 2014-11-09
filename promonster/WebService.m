@@ -45,9 +45,10 @@
 @implementation WebService
 @synthesize indicator;
 #pragma mark - Products
-- (void) getProductsByOrder : (NSString *)order withDelegate: (MainViewController *) delegate {
-    [self startDownloadInView:delegate.view];
+- (void) getProductsByOrder : (NSString *)order {
+    MainViewController *delegate = (MainViewController *) _delegate;
 
+    [self startDownloadInView:delegate.view];
     NSString *site = kLINK;
     site = [site stringByAppendingString:@"main?sort="];
     site = [site stringByAppendingString:order];
@@ -88,7 +89,8 @@
     }];
     [manager.operationQueue addOperation:operation];
 }
-- (void) getProductDetailWithPromo_ID: (NSString *)promo_id withDelegate: (DetailProductViewController *) delegate {
+- (void) getProductDetailWithPromo_ID: (NSString *)promo_id {
+    DetailProductViewController *delegate = (DetailProductViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     [UAAppReviewManager userDidSignificantEvent:YES];
 
@@ -162,7 +164,8 @@
     [manager.operationQueue addOperation:operation];
 }
 
-- (void) getProductsByName: (NSString *)name andOrder: (NSString *)order withDelegate: (MainViewController *) delegate {
+- (void) getProductsByName: (NSString *)name andOrder: (NSString *)order{
+    MainViewController *delegate = (MainViewController *)_delegate;
     [self startDownloadInView:delegate.view];
     
     NSError *error;
@@ -212,7 +215,8 @@
 }
 
 #pragma mark - Search
-- (void) searchProductByQuery: (NSString *)query andOrder: (NSString *)order withDelegate: (SearchViewController *) delegate {
+- (void) searchProductByQuery: (NSString *)query andOrder: (NSString *)order {
+    SearchViewController *delegate = (SearchViewController *)_delegate;
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Buscando"];
 
@@ -281,7 +285,8 @@
 }
 
 #pragma mark - Category
-- (void) getListCategorieWithDelegate: (CategoriesViewController *) delegate {
+- (void) getListCategorie {
+    CategoriesViewController *delegate = (CategoriesViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     NSError *error;
     manager = [AFHTTPRequestOperationManager manager];
@@ -319,7 +324,8 @@
     [manager.operationQueue addOperation:operation];
 }
 #pragma mark - Favoritos
-- (void) getListFavoritesOrder: (NSString *) order andDelegate: (StaredViewController *) delegate {
+- (void) getListFavoritesOrder: (NSString *) order {
+    StaredViewController *delegate = (StaredViewController *) _delegate;
     [self startDownloadInView:delegate.view];
 
     NSError *error;
@@ -409,7 +415,8 @@
     [manager.operationQueue addOperation:operation];
 }
 #pragma mark - CreateCategory
-- (void) createCategory: (CreateCategories *) category andDelegate: (CreateCategoryViewController *) delegate {
+- (void) createCategory: (CreateCategories *) category {
+    CreateCategoryViewController *delegate = (CreateCategoryViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Criando categoria"];
     delegate.isSalve = YES;
@@ -505,7 +512,8 @@
 }
 
 #pragma mark - Edit Category POST
-- (void) editCategoryPOST: (CreateCategories *) category andDelegate: (CreateCategoryViewController *) delegate  {
+- (void) editCategoryPOST: (CreateCategories *) category {
+    CreateCategoryViewController *delegate = (CreateCategoryViewController *) _delegate;
     delegate.isSalve = YES;
     [self startDownloadInView:delegate.view];
     [delegate retractKeyboard];
@@ -553,7 +561,8 @@
                              }];
 }
 #pragma mark - POST LOGOFF
-- (void) makeLogOff: (SetViewController *)delegate  {
+- (void) makeLogOff  {
+    SetViewController *delegate = (SetViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Saindo.."];
@@ -590,7 +599,8 @@
         [self doneDownload];
     }];
 }
-- (void) pushOnService: (UserLogin *) user andDelegate: (SetViewController *) delegate {
+- (void) pushOnService: (UserLogin *) user {
+    SetViewController *delegate = (SetViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Habilitando notificações..."];
     
@@ -675,7 +685,8 @@
     [manager.operationQueue addOperation:operation];
 }
 
-- (void) pushOffService: (SetViewController *)delegate  {
+- (void) pushOffService {
+    SetViewController *delegate = (SetViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Desabilitando..."];
@@ -881,7 +892,8 @@
 }
 
 #pragma mark - Login
-- (void) makeLogin: (UserLogin *) user andDelegate: (SetViewController *) delegate {
+- (void) makeLogin: (UserLogin *) user{
+    SetViewController *delegate = (SetViewController *) _delegate;
     [self startDownloadInView:delegate.view];
     [DejalBezelActivityView activityViewForView:delegate.view withLabel:@"Baixando informações"];
 

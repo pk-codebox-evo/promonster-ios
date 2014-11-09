@@ -27,7 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setLayout];
-    service = [[WebService alloc] init];
+    
+    if (!service) {
+        service = [[WebService alloc] init];
+        service.delegate = self;
+    }
     tableView.hidden = YES;
 
     id barButtonAppearanceInSearchBar = [UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil];
@@ -51,7 +55,7 @@
     NSString *order = [self getEN_orderName:_option.text];
     NSString *query = _searchBar.text;
 
-    [service searchProductByQuery:query andOrder:order withDelegate:self];
+    [service searchProductByQuery:query andOrder:order];
 }
 
 #pragma mark - TableView DataSource

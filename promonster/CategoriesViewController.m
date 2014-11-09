@@ -82,7 +82,8 @@
 #pragma mark - WebService
 - (void) download {
     WebService *service = [[WebService alloc] init];
-    [service getListCategorieWithDelegate:self];
+    service.delegate = self;
+    [service getListCategorie];
 }
 
 #pragma mark - TableView DataSource
