@@ -24,17 +24,15 @@
 
 @implementation DetailProductViewController
 @synthesize produto, service,promo_id, itens, tableView;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+#pragma mark - View lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     if ([CCAux setContEvent] ==3) {
@@ -58,7 +56,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - WebService Communication
+#pragma mark - WebService
 - (void) download {
     if (!service) {
         service = [[WebService alloc] init];
@@ -80,11 +78,9 @@
     NSMutableDictionary *item = [[itens objectAtIndex:indexPath.row] mutableCopy];
     NSString *name = [item objectForKey:@"name"];
     
-    
     if ([name isEqualToString:@"DetailCell"]) {
         static NSString *CellIdentifier = @"DetailCell";
         DetailCell *cell = (DetailCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
         
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DetailCell" owner:self options:nil];
@@ -130,7 +126,6 @@
         static NSString *CellIdentifier = @"ForumCell";
         ForumCell *cell = (ForumCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ForumCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
@@ -159,7 +154,6 @@
         static NSString *CellIdentifier = @"infoCell";
         infoCell *cell = (infoCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"infoCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
@@ -182,11 +176,9 @@
         static NSString *CellIdentifier = @"SharedCell";
         SharedCell *cell = (SharedCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SharedCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
-            
         }
       
         cell.delegate = self;
@@ -206,8 +198,7 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath; {
     NSDictionary *item = [itens objectAtIndex:indexPath.row];
     float value = [[item objectForKey:@"height"] floatValue];
     return value;
@@ -222,8 +213,8 @@
                                            style:CSNotificationViewStyleError
                                          message:feedbackMsg];
     }
-    
 }
+
 #pragma mark - E-mail Application
 - (void)displayMailComposerSheet
 {
@@ -244,19 +235,15 @@
 	NSString *emailBody = [NSString stringWithFormat:@"Dá uma olhada nessa promo: \n%@ - R$ %@ \n\n %@ \n\n\nPromonster: Os preços mais f**** do polvo!",produto.name, produto.price, site];
     
     [picker setMessageBody:emailBody isHTML:NO];
-
-    
 }
 - (void)mailComposeController:(MFMailComposeViewController*)controller
-          didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
+          didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
     [self dismissViewControllerAnimated:YES completion:^{
         
         NSString *feedbackMsg = @"";
         BOOL succes = YES;
         // Notifies users about errors associated with the interface
-        switch (result)
-        {
+        switch (result) {
             case MFMailComposeResultCancelled: {
                 feedbackMsg = @"E-mail cancelado.";
                 succes = NO;
@@ -303,8 +290,7 @@
     
     [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     Shared *share = [[Shared alloc] init];
     share.delegate = self;
     

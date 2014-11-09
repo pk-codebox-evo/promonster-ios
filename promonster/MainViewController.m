@@ -36,13 +36,9 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived) name:@"pushNotification" object:nil];
-    
+    [self setPushNotification];
     [self setLayout];
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"Atualizando"];
-
     [self download];
     loadAgain = YES;
 }
@@ -81,6 +77,9 @@
 }
 
 #pragma mark - PushNotification
+- (void) setPushNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived) name:@"pushNotification" object:nil];
+}
 - (void)pushNotificationReceived {
     NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] valueForKey:@"promoIdPush"];
     NSString *promoId = [userInfo valueForKey:@"promo_id"];
@@ -119,7 +118,7 @@
         [tab setBadgeValue: badge];
     }
 }
-
+#pragma mark - Layout
 - (void) setLayout {
     [_option setText:@"Ordenar por: Recomendadas"];
     [_orderButtonOutlet addTarget:self
@@ -310,7 +309,5 @@
     }
         }];
 }
-
-
 
 @end

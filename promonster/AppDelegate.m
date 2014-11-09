@@ -108,27 +108,6 @@ static NSString *const kAllowTracking = @"allowTracking";
     }];
 }
 
-#pragma mark - Layout
-- (void) customizeTabbar {
-    tabBarController = (UITabBarController *)self.window.rootViewController;
-    tabBarController.tabBar.barTintColor = kCOLOR;
-    tabBarController.tabBar.selectedImageTintColor = [UIColor yellowColor];
-
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor yellowColor], NSForegroundColorAttributeName,
-                                                       [UIFont fontWithName:@"AmericanTypewriter" size:9.0f], NSFontAttributeName,
-                                                       nil] forState:UIControlStateSelected];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
-                                                       [UIFont fontWithName:@"AmericanTypewriter" size:9.0f], NSFontAttributeName,
-                                                       nil] forState:UIControlStateNormal];
-}
-- (void) customizeNavigationBar {
-    [[UINavigationBar appearance] setBarTintColor:kCOLOR];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-}
-
 #pragma mark - Helper Methods
 
 // Helper method to wrap logic for handling app links.
@@ -259,12 +238,14 @@ static NSString *const kAllowTracking = @"allowTracking";
          (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
     }
 }
+
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [CCAux setPushToken:[self stringWithDeviceToken:deviceToken]];
     if (kDEBUG) {
         NSLog(@"\n> Token Device PushNotification: %@",[CCAux getPushToken]);
     }
 }
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     if (kDEBUG) {
         NSLog(@"\nERROR - push.");
@@ -277,9 +258,7 @@ static NSString *const kAllowTracking = @"allowTracking";
     }
 }
 
-
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
     _promoID = [userInfo valueForKey:@"promo_id"];
     _userInfoTmp = userInfo;
     NSDictionary *aps = [userInfo valueForKey:@"aps"];
@@ -342,5 +321,26 @@ static NSString *const kAllowTracking = @"allowTracking";
             [tab setBadgeValue: badge];
         }
     }
+}
+
+#pragma mark - Layout
+- (void) customizeTabbar {
+    tabBarController = (UITabBarController *)self.window.rootViewController;
+    tabBarController.tabBar.barTintColor = kCOLOR;
+    tabBarController.tabBar.selectedImageTintColor = [UIColor yellowColor];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor yellowColor], NSForegroundColorAttributeName,
+                                                       [UIFont fontWithName:@"AmericanTypewriter" size:9.0f], NSFontAttributeName,
+                                                       nil] forState:UIControlStateSelected];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                       [UIFont fontWithName:@"AmericanTypewriter" size:9.0f], NSFontAttributeName,
+                                                       nil] forState:UIControlStateNormal];
+}
+- (void) customizeNavigationBar {
+    [[UINavigationBar appearance] setBarTintColor:kCOLOR];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 @end

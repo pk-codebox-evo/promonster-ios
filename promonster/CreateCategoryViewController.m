@@ -25,23 +25,13 @@
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+#pragma mark - View lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
     newCategory = [[CreateCategories alloc] init];
     newCategory.color = [self getColorAtIndex:0];
-    salveOutlet.titleLabel.font = [UIFont fontWithName:@"Rokkitt" size:16.0f];
     
-    salveOutlet.layer.borderWidth = 1;
-    salveOutlet.layer.cornerRadius = CGRectGetHeight(salveOutlet.bounds) / 8;
-    
-    salveOutlet.layer.shadowColor = [UIColor grayColor].CGColor;
-    salveOutlet.layer.shadowOffset = CGSizeMake(0, 1);
-    salveOutlet.layer.shadowOpacity = 2;
-    salveOutlet.layer.shadowRadius = 2.0;
-    salveOutlet.clipsToBounds = NO;
-    
+    [self defineSalveButton];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(retractKeyboard)];
     [scrollView addGestureRecognizer:gestureRecognizer];
@@ -146,30 +136,6 @@
     return index;
 }
 
-- (void)buttonPress:(id)sender{
-    UIButton* button = (UIButton*)sender;
-    int cont = (int)[tagOption count];
-    for (int i = 0; i<cont; i++) {
-        UIButton *but = [tagOption objectAtIndex:i];
-
-        if (button!=but) {
-            UIImage *image = [[UIImage imageNamed:@"tag_gray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            [but setImage:image forState:UIControlStateNormal];
-        } else {
-            NSString *name = @"tag";
-            name = [name stringByAppendingString:[NSString stringWithFormat:@"%d",i]];
-            UIImage *image = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            [but setImage:image forState:UIControlStateNormal];
-            newCategory.color = [self getColorAtIndex:i];
-        }
-    }
-}
-
-
-- (void) actionButton: (UIButton *) button {
-    [button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchDown];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -224,8 +190,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 	[UIView commitAnimations];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
+- (void)textFieldDidEndEditing:(UITextField *)textField {
 	CGRect viewFrame = self.scrollView.frame;
 	viewFrame.origin.y += animatedDistance;
 	[UIView beginAnimations:nil context:NULL];
@@ -247,12 +212,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     return NO;
 }
 
+#pragma mark - Button Action
 - (IBAction)salve:(id)sender {
     [self salveAction];
 }
 
 - (void) salveAction {
-    
     if (!_isSalve) {
         if (edit) {
             newCategory.name = nameTextField.placeholder;
@@ -265,7 +230,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         if (!service) {
             service = [[WebService alloc] init];
         }
-        
         
         if (edit) {
             [service editCategoryPOST:newCategory andDelegate:self];
@@ -280,6 +244,39 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
             }
         }
     }
+}
+- (void)buttonPress:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    int cont = (int)[tagOption count];
+    for (int i = 0; i<cont; i++) {
+        UIButton *but = [tagOption objectAtIndex:i];
+        
+        if (button!=but) {
+            UIImage *image = [[UIImage imageNamed:@"tag_gray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            [but setImage:image forState:UIControlStateNormal];
+        } else {
+            NSString *name = @"tag";
+            name = [name stringByAppendingString:[NSString stringWithFormat:@"%d",i]];
+            UIImage *image = [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            [but setImage:image forState:UIControlStateNormal];
+            newCategory.color = [self getColorAtIndex:i];
+        }
+    }
+}
+- (void) actionButton: (UIButton *) button {
+    [button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchDown];
+}
+- (void) defineSalveButton {
+    salveOutlet.titleLabel.font = [UIFont fontWithName:@"Rokkitt" size:16.0f];
+    
+    salveOutlet.layer.borderWidth = 1;
+    salveOutlet.layer.cornerRadius = CGRectGetHeight(salveOutlet.bounds) / 8;
+    
+    salveOutlet.layer.shadowColor = [UIColor grayColor].CGColor;
+    salveOutlet.layer.shadowOffset = CGSizeMake(0, 1);
+    salveOutlet.layer.shadowOpacity = 2;
+    salveOutlet.layer.shadowRadius = 2.0;
+    salveOutlet.clipsToBounds = NO;
 }
 - (void) setDelegate:(CategoriesViewController *)delegateTmp {
     delegate = delegateTmp;

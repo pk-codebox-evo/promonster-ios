@@ -16,17 +16,15 @@
 
 @implementation SearchViewController
 @synthesize service,filteredTableData, info, tableView;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+#pragma mark - View lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setLayout];
     service = [[WebService alloc] init];
@@ -42,11 +40,12 @@
     self.title = @"BUSCAR";
     self.screenName = @"Search Screen";
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - WebService
 - (void) download {
 
     NSString *order = [self getEN_orderName:_option.text];
@@ -62,14 +61,12 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger linha = indexPath.row;
-    //if (linha%2==0) {
     static NSString *CellIdentifier = @"HomeCell";
     HomeCell *cell = (HomeCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomeCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        
     }
 
     Product *product = [info objectAtIndex:linha];
@@ -92,7 +89,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
-    
 }
 #pragma mark - TableView Delegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,7 +127,6 @@
 
 #pragma mark - UIActionSheet
 - (void) showActionSheet{
-    
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancelar"
@@ -140,8 +135,7 @@
     
     [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *order = @"Ordenar por: ";
     order = [order stringByAppendingString:[actionSheet buttonTitleAtIndex:buttonIndex]];
     NSString *old = _option.text;
@@ -167,7 +161,7 @@
     }
     return result;
 }
-
+#pragma mark - Keyboard
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self hideKeyboard];
 }
@@ -178,8 +172,7 @@
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self download];
 }
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     _searchBar.text = @"";
     [self hideKeyboard];
 }

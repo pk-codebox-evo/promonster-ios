@@ -31,9 +31,8 @@
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+#pragma mark - View lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"Atualizando"];
     self.tableView.hidden = YES;
@@ -84,7 +83,6 @@
 - (void) download {
     WebService *service = [[WebService alloc] init];
     [service getListCategorieWithDelegate:self];
-
 }
 
 #pragma mark - TableView DataSource
@@ -115,7 +113,6 @@
     color = [color stringByReplacingOccurrencesOfString:@"#" withString:@""];
     cell.image.tintColor = [UIColor colorWithHexString:color];
     return cell;
-    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;  {
     return 54;
@@ -140,8 +137,7 @@
 }
 
 #pragma mark - SWTableViewCell
-- (NSArray *)rightButtons
-{
+- (NSArray *)rightButtons {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
@@ -154,9 +150,7 @@
 }
 
 #pragma mark - SWTableViewDelegate
-
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state
-{
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state {
     switch (state) {
         case 0:
             // NSLog(@"utility buttons closed");
@@ -173,7 +167,6 @@
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
-    
     WebService *service = [[WebService alloc] init];
     NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
     Categories *cat = [info objectAtIndex:cellIndexPath.row];

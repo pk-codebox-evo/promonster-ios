@@ -37,7 +37,7 @@
     [self setNameButton];
 }
 
-
+#pragma mark - Layout
 - (void) setStrikeLine {
     NSNumber *strikeSize = [NSNumber numberWithInt:1];
     
@@ -68,17 +68,16 @@
     viewBackgroundCell.clipsToBounds = YES;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
+#pragma mark - Action Button
 - (IBAction)paperplanButton:(UIButton *)sender {
     [self showActionSheet];
 }
 
+#pragma mark - GHContextMenu Datasource
 - (NSInteger) numberOfMenuItems {
     return 4;
 }
@@ -140,7 +139,6 @@
 }
 
 #pragma mark - Functions Like and Unlike
-
 - (void) likeFunction {
     WebService *service = [[WebService alloc] init];
     [service markStaredPromoID:produto.promo_id andDelegate:delegate andButton:likeButton andCell:self];

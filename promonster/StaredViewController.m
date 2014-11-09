@@ -26,7 +26,7 @@
     }
     return self;
 }
-
+#pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self showNoFav];
@@ -47,15 +47,16 @@
     [super viewWillAppear:animated];
     self.screenName = @"Favorites Screen";
 }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (void) logIn {
     [self.tabBarController setSelectedIndex:4];
     [CCAux setLoginStatus:YES];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - WebService
 - (void) download {
     WebService *service = [[WebService alloc] init];
     

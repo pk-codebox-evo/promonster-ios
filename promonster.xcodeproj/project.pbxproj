@@ -669,34 +669,58 @@
 		FA5B559019880FBF007C2881 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA7ED5511A0FAB4C0039039B /* Aux */,
+				FA7ED5531A0FAB7B0039039B /* Objects */,
+				FA7ED5521A0FAB660039039B /* WebService */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA7ED5511A0FAB4C0039039B /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				FA5B632D19988382004417CF /* CCLabel.h */,
+				FA5B632E19988382004417CF /* CCLabel.m */,
 				FA1CFD6E199003F100446187 /* CCAux.h */,
 				FA1CFD6F199003F100446187 /* CCAux.m */,
-				FA1CFD70199003F100446187 /* SCErrorHandler.h */,
-				FA1CFD71199003F100446187 /* SCErrorHandler.m */,
 				FA1CFD72199003F100446187 /* SCSettings.h */,
 				FA1CFD73199003F100446187 /* SCSettings.m */,
+				FA1CFD70199003F100446187 /* SCErrorHandler.h */,
+				FA1CFD71199003F100446187 /* SCErrorHandler.m */,
 				FA3BA4A8198B5F40000E2640 /* DownloadImage.h */,
 				FA3BA4A9198B5F40000E2640 /* DownloadImage.m */,
+			);
+			name = Aux;
+			sourceTree = "<group>";
+		};
+		FA7ED5521A0FAB660039039B /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				FA169A19198B09E300008502 /* Parse.h */,
+				FA169A1A198B09E300008502 /* Parse.m */,
+				FACC3F9C198AA1D300D239A8 /* WebService.h */,
+				FACC3F9D198AA1D300D239A8 /* WebService.m */,
+				FA063AE8199ABEA100EB6F8A /* Shared.h */,
+				FA063AE9199ABEA100EB6F8A /* Shared.m */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		FA7ED5531A0FAB7B0039039B /* Objects */ = {
+			isa = PBXGroup;
+			children = (
 				FA5B559119880FF6007C2881 /* Product.h */,
 				FA5B559219880FF6007C2881 /* Product.m */,
 				FA63A184199C1B220015FCBC /* ProductDetail.h */,
 				FA63A185199C1B220015FCBC /* ProductDetail.m */,
-				FA169A16198B098300008502 /* Categories.h */,
-				FA169A17198B098300008502 /* Categories.m */,
-				FACC3F9C198AA1D300D239A8 /* WebService.h */,
-				FACC3F9D198AA1D300D239A8 /* WebService.m */,
-				FA169A19198B09E300008502 /* Parse.h */,
-				FA169A1A198B09E300008502 /* Parse.m */,
-				FA5B632719988037004417CF /* CreateCategories.h */,
-				FA5B632819988037004417CF /* CreateCategories.m */,
-				FA5B632D19988382004417CF /* CCLabel.h */,
-				FA5B632E19988382004417CF /* CCLabel.m */,
 				FAC421011999436300F07ABA /* UserLogin.h */,
 				FAC421021999436300F07ABA /* UserLogin.m */,
-				FA063AE8199ABEA100EB6F8A /* Shared.h */,
-				FA063AE9199ABEA100EB6F8A /* Shared.m */,
+				FA169A16198B098300008502 /* Categories.h */,
+				FA169A17198B098300008502 /* Categories.m */,
+				FA5B632719988037004417CF /* CreateCategories.h */,
+				FA5B632819988037004417CF /* CreateCategories.m */,
 			);
-			name = Model;
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		FABB2ADE1A0DBD6E00D50013 /* DetailProcuctCell */ = {

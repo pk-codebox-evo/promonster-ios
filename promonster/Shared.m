@@ -12,6 +12,8 @@
 @implementation Shared
 @synthesize delegate;
 
+
+#pragma mark - Social
 - (void) sharedFacebookProduct: (Product *)produto {
     NSLog(@"sharedFacebookProduct");
 	//  Create an instance of the Tweet Sheet
@@ -25,13 +27,11 @@
 	facebookSheet.completionHandler = ^(SLComposeViewControllerResult result) {
 		switch(result) {
 				//  This means the user cancelled without sending the Tweet
-			case SLComposeViewControllerResultCancelled:
-            {
+			case SLComposeViewControllerResultCancelled: {
 
 				break;
             }
-			case SLComposeViewControllerResultDone:
-            {
+			case SLComposeViewControllerResultDone: {
                 [CSNotificationView showInViewController:delegate
                                                    style:CSNotificationViewStyleSuccess
                                                  message:@"Produto compartilhado no Facebook!"];
@@ -41,8 +41,6 @@
 	};
 	
 	//  Set the initial body of the Tweet
-    
-
     NSString *description = @"Confere essa promonster. \uf609";
 	[facebookSheet setInitialText:description];
     
@@ -142,8 +140,7 @@
 	}];
 }
 
-
-
+#pragma mark - Aux
 - (NSString *) getDescription: (Product*) produto  {
     NSString *text = produto.name;
     text = [text stringByAppendingString:@"\nPreço: R$ "];

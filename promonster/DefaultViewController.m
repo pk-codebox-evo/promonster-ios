@@ -70,12 +70,17 @@
     self.navigationItem.rightBarButtonItems = actionButtonItems;
 }
 
+- (void) backButtonCustom {
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @" " style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+}
+
+#pragma mark - Social
 - (void) sharedFacebook {
     Shared *share = [[Shared alloc] init];
     share.delegate = (MainViewController *)self;
     [share sharedFacebookPromonster];
 }
-
 
 - (void)sharedAction {
     UIAlertView *aler = [[UIAlertView alloc ] initWithTitle:@"aviso" message:@"shared" delegate:nil cancelButtonTitle:@"Ok"otherButtonTitles: nil];
@@ -166,13 +171,8 @@
     } else {
         action();
     }
-    
 }
 
-- (void) backButtonCustom {
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @" " style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [[self navigationItem] setBackBarButtonItem: newBackButton];
-}
 - (void)showAlert:(NSString *)message
            result:(id)result
             error:(NSError *)error {
@@ -215,14 +215,12 @@
 }
 
 #pragma mark - Facebook
-
--(void) postWithText: (NSString*) message
+- (void) postWithText: (NSString*) message
            ImageName: (NSString*) image
                  URL: (NSString*) url
              Caption: (NSString*) caption
                 Name: (NSString*) name
-      andDescription: (NSString*) description
-{
+      andDescription: (NSString*) description {
     
     NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                    name, @"name",
@@ -231,15 +229,12 @@
                                    message, @"message",
                                    nil];
     
-    if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound)
-    {
+    if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
         // No permissions found in session, ask for it
         [FBSession.activeSession requestNewPublishPermissions: [NSArray arrayWithObject:@"publish_actions"]
                                               defaultAudience: FBSessionDefaultAudienceFriends
-                                            completionHandler: ^(FBSession *session, NSError *error)
-         {
-             if (!error)
-             {
+                                            completionHandler: ^(FBSession *session, NSError *error) {
+             if (!error) {
                  // If permissions granted and not already posting then publish the story
                  if (!m_postingInProgress)
                  {
@@ -249,15 +244,13 @@
          }];
     } else {
         // If permissions present and not already posting then publish the story
-        if (!m_postingInProgress)
-        {
+        if (!m_postingInProgress) {
             [self postToWall: params];
         }
     }
 }
 
--(void) postToWall: (NSMutableDictionary*) params
-{
+- (void) postToWall: (NSMutableDictionary*) params {
     m_postingInProgress = YES; //for not allowing multiple hits
     
     [FBRequestConnection startWithGraphPath:@"me/feed"
@@ -265,10 +258,8 @@
                                  HTTPMethod:@"POST"
                           completionHandler:^(FBRequestConnection *connection,
                                               id result,
-                                              NSError *error)
-     {
-         if (error)
-         {
+                                              NSError *error) {
+         if (error) {
              //showing an alert for failure
              UIAlertView *alertView = [[UIAlertView alloc]
                                        initWithTitle:@"Post Failed"

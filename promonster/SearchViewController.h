@@ -25,6 +25,6 @@
 @property (nonatomic, strong) NSMutableArray *filteredTableData;
 @property (nonatomic, strong) NSArray *info;
 
-- (void) download;
 - (void) hideKeyboard;
+- (void) download;
 @end

@@ -365,7 +365,7 @@
 }
 #pragma mark - CLLocation
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was an error retrieving your location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Erro" message:@"Ocorreu um problema ao recuperar a sua localização" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [errorAlert show];
     NSLog(@"Error: %@",error.description);
 }
@@ -375,7 +375,7 @@
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
         NSString *title;
         title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
-        NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
+        NSString *message = @"Para utilizar sua localização em segundo plano você deve definir como \"Sempre\" nas Configurações Locais Serviços";
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                             message:message
